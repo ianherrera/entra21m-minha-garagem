@@ -62,7 +62,7 @@ public class JFrameInicial extends JFrame implements JFrameComportamentosInterfa
         });
         
         jButtonCadastroCarro.addActionListener((ActionEvent e) -> {
-            JFramecadastroCarro cadastro = new JFramecadastroCarro().setVisible(true);
+             new JFramecadastroCarro().setVisible(true);
         });
     }
     

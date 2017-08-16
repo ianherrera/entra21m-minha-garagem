@@ -6,7 +6,9 @@
 package view;
 
 import dao.CarroDAO;
+import database.Utilitarios;
 import java.sql.Date;
+import javax.swing.JOptionPane;
 import model.Carro;
 
 /**
@@ -390,6 +392,7 @@ public class JFramecadastroCarro extends javax.swing.JFrame {
         meuCarro.setNome(String.valueOf(jComboBoxNome.getSelectedItem()));
         meuCarro.setAnoFabricacao(Short.parseShort(jComboBoxAnoFabricacao.getSelectedItem().toString()));
         meuCarro.setFabricante(String.valueOf(jComboBoxFabricante.getSelectedItem()));
+        meuCarro.setAnoLancamento(Short.parseShort(jComboBoxAnoLancamento.getSelectedItem().toString()));
         
          byte quantidadeDeBatidas = Byte.parseByte(jSpinnerqtdBatidas.getValue().toString());
         meuCarro.setQuantidadePortas(quantidadeDeBatidas);
@@ -405,6 +408,11 @@ public class JFramecadastroCarro extends javax.swing.JFrame {
         
         CarroDAO dao = new CarroDAO();
         int codigo = dao.inserir(meuCarro);
+        if(codigo != Utilitarios.NAO_FOI_POSSIVEL_INSERIR){
+            JOptionPane.showMessageDialog(null, "Cadastro realizado com sucesso");
+        }else{
+            JOptionPane.showMessageDialog(null, "Não foi possivel inserir");
+        }
         
     }//GEN-LAST:event_jButtonSalvarActionPerformed
 

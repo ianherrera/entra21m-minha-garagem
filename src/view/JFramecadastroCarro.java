@@ -36,7 +36,7 @@ public class JFramecadastroCarro extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         buttonGroupPermitidaCirculacao = new javax.swing.ButtonGroup();
         buttonGroupEstaFuncional = new javax.swing.ButtonGroup();
-        jLabelCodigo = new javax.swing.JLabel();
+        jLabelCodigoo = new javax.swing.JLabel();
         jLabelNome = new javax.swing.JLabel();
         jLabelCor = new javax.swing.JLabel();
         jButtonSalvar = new javax.swing.JButton();
@@ -54,29 +54,32 @@ public class JFramecadastroCarro extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jFormattedTextFieldChassi = new javax.swing.JFormattedTextField();
         jLabel4 = new javax.swing.JLabel();
-        jFormattedTextField1 = new javax.swing.JFormattedTextField();
+        jFormattedTextFieldPotencia = new javax.swing.JFormattedTextField();
         jLabel5 = new javax.swing.JLabel();
         jSpinnerqtdBatidas = new javax.swing.JSpinner();
         jLabel6 = new javax.swing.JLabel();
         jSpinnerqtdPortas = new javax.swing.JSpinner();
         jLabel7 = new javax.swing.JLabel();
-        jFormattedTextField2 = new javax.swing.JFormattedTextField();
+        jFormattedTextFieldQuilometragem = new javax.swing.JFormattedTextField();
         jLabel8 = new javax.swing.JLabel();
         jComboBox1 = new javax.swing.JComboBox();
         jLabel9 = new javax.swing.JLabel();
-        jFormattedTextField3 = new javax.swing.JFormattedTextField();
+        jFormattedTextFieldRenavam = new javax.swing.JFormattedTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        jTextAreaDescricao = new javax.swing.JTextArea();
         jLabel10 = new javax.swing.JLabel();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
+        jRadioButtonPermitidaCirculacaoSim = new javax.swing.JRadioButton();
+        jRadioButtonPermitidaCirculacaoNao = new javax.swing.JRadioButton();
         jLabel11 = new javax.swing.JLabel();
-        jRadioButton3 = new javax.swing.JRadioButton();
-        jRadioButton4 = new javax.swing.JRadioButton();
+        jRadioButtonEstaFuncionandoSim = new javax.swing.JRadioButton();
+        jRadioButtonEstaFuncionandoNao = new javax.swing.JRadioButton();
         jLabel12 = new javax.swing.JLabel();
         jTextFieldCodigo = new javax.swing.JTextField();
         jComboBoxFabricante = new javax.swing.JComboBox();
         jComboBoxNome = new javax.swing.JComboBox();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabelcodigo = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
@@ -85,7 +88,7 @@ public class JFramecadastroCarro extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabelCodigo.setText("Codigo");
+        jLabelCodigoo.setText("Codigo");
 
         jLabelNome.setText("Nome");
 
@@ -145,7 +148,7 @@ public class JFramecadastroCarro extends javax.swing.JFrame {
         jLabel4.setText("Potencia");
 
         try {
-            jFormattedTextField1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###")));
+            jFormattedTextFieldPotencia.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
@@ -162,25 +165,31 @@ public class JFramecadastroCarro extends javax.swing.JFrame {
 
         jLabel9.setText("Renavam");
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        try {
+            jFormattedTextFieldRenavam.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###########")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+
+        jTextAreaDescricao.setColumns(20);
+        jTextAreaDescricao.setRows(5);
+        jScrollPane1.setViewportView(jTextAreaDescricao);
 
         jLabel10.setText("Permitido Circulação:");
 
-        buttonGroupPermitidaCirculacao.add(jRadioButton1);
-        jRadioButton1.setText("Sim");
+        buttonGroupPermitidaCirculacao.add(jRadioButtonPermitidaCirculacaoSim);
+        jRadioButtonPermitidaCirculacaoSim.setText("Sim");
 
-        buttonGroupPermitidaCirculacao.add(jRadioButton2);
-        jRadioButton2.setText("Não");
+        buttonGroupPermitidaCirculacao.add(jRadioButtonPermitidaCirculacaoNao);
+        jRadioButtonPermitidaCirculacaoNao.setText("Não");
 
         jLabel11.setText("Esta Funcionando:");
 
-        buttonGroupEstaFuncional.add(jRadioButton3);
-        jRadioButton3.setText("Sim");
+        buttonGroupEstaFuncional.add(jRadioButtonEstaFuncionandoSim);
+        jRadioButtonEstaFuncionandoSim.setText("Sim");
 
-        buttonGroupEstaFuncional.add(jRadioButton4);
-        jRadioButton4.setText("Não");
+        buttonGroupEstaFuncional.add(jRadioButtonEstaFuncionandoNao);
+        jRadioButtonEstaFuncionandoNao.setText("Não");
 
         jLabel12.setText("Descrição:");
 
@@ -192,6 +201,8 @@ public class JFramecadastroCarro extends javax.swing.JFrame {
                 jComboBoxNomeActionPerformed(evt);
             }
         });
+
+        jLabel14.setText("jLabel14");
 
         jMenu1.setText("File");
         jMenuBar1.add(jMenu1);
@@ -207,8 +218,8 @@ public class JFramecadastroCarro extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -226,17 +237,17 @@ public class JFramecadastroCarro extends javax.swing.JFrame {
                                         .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addGap(18, 18, 18)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jFormattedTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jFormattedTextFieldRenavam, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel9)))
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel10)
-                                    .addComponent(jRadioButton1)
-                                    .addComponent(jRadioButton2))
+                                    .addComponent(jRadioButtonPermitidaCirculacaoSim)
+                                    .addComponent(jRadioButtonPermitidaCirculacaoNao))
                                 .addGap(27, 27, 27)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jRadioButton4)
-                                    .addComponent(jRadioButton3)
+                                    .addComponent(jRadioButtonEstaFuncionandoNao)
+                                    .addComponent(jRadioButtonEstaFuncionandoSim)
                                     .addComponent(jLabel11))
                                 .addGap(61, 61, 61)
                                 .addComponent(jLabel12))
@@ -255,11 +266,11 @@ public class JFramecadastroCarro extends javax.swing.JFrame {
                                             .addGroup(layout.createSequentialGroup()
                                                 .addComponent(jFormattedTextFieldPlaca, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addGap(38, 38, 38)
-                                                .addComponent(jFormattedTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                                .addComponent(jFormattedTextFieldPotencia, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                         .addGap(20, 20, 20)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(jLabel7)
-                                            .addComponent(jFormattedTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                            .addComponent(jFormattedTextFieldQuilometragem, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                     .addGroup(layout.createSequentialGroup()
                                         .addGap(159, 159, 159)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -275,7 +286,10 @@ public class JFramecadastroCarro extends javax.swing.JFrame {
                                     .addComponent(jLabel3)
                                     .addGroup(layout.createSequentialGroup()
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabelCodigo)
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addComponent(jLabelCodigoo)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(jLabelcodigo))
                                             .addComponent(jTextFieldCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
                                         .addGap(18, 18, 18)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -290,7 +304,7 @@ public class JFramecadastroCarro extends javax.swing.JFrame {
                                     .addComponent(jFormattedTextFielddata, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabelData))))
                         .addContainerGap(159, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createSequentialGroup()
@@ -300,19 +314,33 @@ public class JFramecadastroCarro extends javax.swing.JFrame {
                                 .addGap(85, 85, 85))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 352, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(49, 49, 49))))))
+                                .addGap(49, 49, 49))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel13)
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(22, 22, 22)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabelFabricante)
-                            .addComponent(jLabelNome)
-                            .addComponent(jLabelData))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel13)
+                        .addGap(8, 8, 8)
+                        .addComponent(jLabelCodigoo)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(8, 8, 8)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabelFabricante)
+                                    .addComponent(jLabelNome)
+                                    .addComponent(jLabelData))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabelcodigo)
+                                .addGap(18, 18, 18)))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jFormattedTextFielddata, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -338,8 +366,8 @@ public class JFramecadastroCarro extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jComboBoxCor, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jFormattedTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jFormattedTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jFormattedTextFieldPotencia, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jFormattedTextFieldQuilometragem, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jFormattedTextFieldPlaca, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -352,7 +380,7 @@ public class JFramecadastroCarro extends javax.swing.JFrame {
                             .addComponent(jLabel6)
                             .addComponent(jSpinnerqtdPortas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jFormattedTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jFormattedTextFieldRenavam, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(22, 22, 22)
@@ -361,22 +389,19 @@ public class JFramecadastroCarro extends javax.swing.JFrame {
                                     .addComponent(jLabel11)
                                     .addComponent(jLabel12))
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jRadioButton1)
-                                    .addComponent(jRadioButton3))
+                                    .addComponent(jRadioButtonPermitidaCirculacaoSim)
+                                    .addComponent(jRadioButtonEstaFuncionandoSim))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jRadioButton2)
-                                    .addComponent(jRadioButton4)))
+                                    .addComponent(jRadioButtonPermitidaCirculacaoNao)
+                                    .addComponent(jRadioButtonEstaFuncionandoNao)))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(40, 40, 40)
                                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jButtonCancelar)
-                            .addComponent(jButtonSalvar)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabelCodigo)
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                            .addComponent(jButtonSalvar))))
                 .addContainerGap())
         );
 
@@ -393,6 +418,7 @@ public class JFramecadastroCarro extends javax.swing.JFrame {
         meuCarro.setAnoFabricacao(Short.parseShort(jComboBoxAnoFabricacao.getSelectedItem().toString()));
         meuCarro.setFabricante(String.valueOf(jComboBoxFabricante.getSelectedItem()));
         meuCarro.setAnoLancamento(Short.parseShort(jComboBoxAnoLancamento.getSelectedItem().toString()));
+        meuCarro.setCor(String.valueOf(jComboBoxCor.getSelectedItem()));
         
          byte quantidadeDeBatidas = Byte.parseByte(jSpinnerqtdBatidas.getValue().toString());
         meuCarro.setQuantidadePortas(quantidadeDeBatidas);
@@ -400,16 +426,41 @@ public class JFramecadastroCarro extends javax.swing.JFrame {
         byte quantidadePortas = Byte.parseByte(jSpinnerqtdPortas.getValue().toString());
         meuCarro.setQuantidadePortas(quantidadePortas);
         
+        meuCarro.setPotencia(Float.parseFloat(jFormattedTextFieldPotencia.getText()));
+        meuCarro.setQuilometragem(Float.parseFloat(jFormattedTextFieldQuilometragem.getText()));
+        meuCarro.setChassi(jFormattedTextFieldChassi.getText());
+        meuCarro.setDescricao(jTextAreaDescricao.getText());
+        meuCarro.setRenavam(Integer.parseInt(jFormattedTextFieldRenavam.getText()));
+        meuCarro.setPlaca(jFormattedTextFieldPlaca.getText());
+        
+        meuCarro.setPermitidaCirculacao(jRadioButtonPermitidaCirculacaoSim.isSelected());
+        
+        meuCarro.setEstaFuncional(jRadioButtonEstaFuncionandoSim.isSelected());
+        
+        
         String dataCompra = jFormattedTextFielddata.getText();
         int  ano = Integer.parseInt(dataCompra.substring(6,10));
-        int mes = Integer.parseInt(dataCompra.substring(3,40));
+        int mes = Integer.parseInt(dataCompra.substring(3,4));
         int dia = Integer.parseInt(dataCompra.substring(0,1));
         meuCarro.setDataCompra(new Date(ano,mes,dia));
         
         CarroDAO dao = new CarroDAO();
+        if(jLabelCodigoo.getText().equals("")){
+            meuCarro.setId(Integer.parseInt(jLabelCodigoo.getText()));
+            int codigo = dao.alterar(meuCarro);
+            if(codigo != Utilitarios.NAO_FOI_POSSIVEL_ALTERAR){
+                JOptionPane.showMessageDialog(null, "Alteração realizada com sucesso");
+            }else{
+                JOptionPane.showConfirmDialog(null, "Não foi possivel alterar");
+            }
+        }else{
+            
+        }
+        
         int codigo = dao.inserir(meuCarro);
         if(codigo != Utilitarios.NAO_FOI_POSSIVEL_INSERIR){
             JOptionPane.showMessageDialog(null, "Cadastro realizado com sucesso");
+            jLabelCodigoo.setText(String.valueOf(codigo));
         }else{
             JOptionPane.showMessageDialog(null, "Não foi possivel inserir");
         }
@@ -470,16 +521,18 @@ public class JFramecadastroCarro extends javax.swing.JFrame {
     private javax.swing.JComboBox jComboBoxCor;
     private javax.swing.JComboBox jComboBoxFabricante;
     private javax.swing.JComboBox jComboBoxNome;
-    private javax.swing.JFormattedTextField jFormattedTextField1;
-    private javax.swing.JFormattedTextField jFormattedTextField2;
-    private javax.swing.JFormattedTextField jFormattedTextField3;
     private javax.swing.JFormattedTextField jFormattedTextFieldChassi;
     private javax.swing.JFormattedTextField jFormattedTextFieldPlaca;
+    private javax.swing.JFormattedTextField jFormattedTextFieldPotencia;
+    private javax.swing.JFormattedTextField jFormattedTextFieldQuilometragem;
+    private javax.swing.JFormattedTextField jFormattedTextFieldRenavam;
     private javax.swing.JFormattedTextField jFormattedTextFielddata;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -489,23 +542,24 @@ public class JFramecadastroCarro extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JLabel jLabelAnoLancamento;
-    private javax.swing.JLabel jLabelCodigo;
+    private javax.swing.JLabel jLabelCodigoo;
     private javax.swing.JLabel jLabelCor;
     private javax.swing.JLabel jLabelData;
     private javax.swing.JLabel jLabelFabricante;
     private javax.swing.JLabel jLabelNome;
     private javax.swing.JLabel jLabelPlaca;
+    private javax.swing.JLabel jLabelcodigo;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
-    private javax.swing.JRadioButton jRadioButton3;
-    private javax.swing.JRadioButton jRadioButton4;
+    private javax.swing.JRadioButton jRadioButtonEstaFuncionandoNao;
+    private javax.swing.JRadioButton jRadioButtonEstaFuncionandoSim;
+    private javax.swing.JRadioButton jRadioButtonPermitidaCirculacaoNao;
+    private javax.swing.JRadioButton jRadioButtonPermitidaCirculacaoSim;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSpinner jSpinnerqtdBatidas;
     private javax.swing.JSpinner jSpinnerqtdPortas;
-    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JTextArea jTextAreaDescricao;
     private javax.swing.JTextField jTextFieldCodigo;
     // End of variables declaration//GEN-END:variables
 }

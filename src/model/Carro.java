@@ -7,21 +7,21 @@ import java.sql.Date;
  * @author (Diego Schmitt , 08-07-2017)
  */
 public class Carro {
-    private int id,renavam;
+    private int id;
 
     
     private short anoFabricacao,anoLancamento,tipoPneu;
     private byte quantidadePortas,quantidadeBatidas;
-    private String nome,cor,fabricante,placa,chassi,descricao;
+    private String nome,cor,fabricante,placa,chassi,descricao,renavam;
     private float quilometragem,potencia;
     private Date dataCompra;
     private boolean estaFuncional,permitidaCirculacao;
     
-    public int getRenavam() {
+    public String getRenavam() {
         return renavam;
     }
 
-    public void setRenavam(int renavam) {
+    public void setRenavam(String renavam) {
         this.renavam = renavam;
     }
     public String getDescricao() {
@@ -95,11 +95,11 @@ public class Carro {
         this.placa = placa;
     }
 
-    public int getRenavan() {
+    public String getRenavan() {
         return renavam;
     }
 
-    public void setRenavan(int renavan) {
+    public void setRenavan(String renavan) {
         this.renavam = renavan;
     }
 

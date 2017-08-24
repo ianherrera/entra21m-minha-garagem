@@ -36,7 +36,7 @@ public class JFramecadastroCarro extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         buttonGroupPermitidaCirculacao = new javax.swing.ButtonGroup();
         buttonGroupEstaFuncional = new javax.swing.ButtonGroup();
-        jLabelCodigoo = new javax.swing.JLabel();
+        jLabelCodigo = new javax.swing.JLabel();
         jLabelNome = new javax.swing.JLabel();
         jLabelCor = new javax.swing.JLabel();
         jButtonSalvar = new javax.swing.JButton();
@@ -80,15 +80,17 @@ public class JFramecadastroCarro extends javax.swing.JFrame {
         jLabel14 = new javax.swing.JLabel();
         jLabelcodigo = new javax.swing.JLabel();
         jLabelcodigoEscrever = new javax.swing.JLabel();
+        jButtonExcluir = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
 
         jLabel1.setText("jLabel1");
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Cadastro de carro");
 
-        jLabelCodigoo.setText("Codigo");
+        jLabelCodigo.setText("Codigo");
 
         jLabelNome.setText("Nome");
 
@@ -170,6 +172,11 @@ public class JFramecadastroCarro extends javax.swing.JFrame {
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
+        jFormattedTextFieldRenavam.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jFormattedTextFieldRenavamActionPerformed(evt);
+            }
+        });
 
         jTextAreaDescricao.setColumns(20);
         jTextAreaDescricao.setRows(5);
@@ -203,6 +210,13 @@ public class JFramecadastroCarro extends javax.swing.JFrame {
         });
 
         jLabel14.setText("jLabel14");
+
+        jButtonExcluir.setText("Excluir");
+        jButtonExcluir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonExcluirActionPerformed(evt);
+            }
+        });
 
         jMenu1.setText("File");
         jMenuBar1.add(jMenu1);
@@ -286,7 +300,7 @@ public class JFramecadastroCarro extends javax.swing.JFrame {
                                     .addComponent(jLabel3)
                                     .addGroup(layout.createSequentialGroup()
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(jLabelCodigoo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(jLabelCodigo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                             .addComponent(jLabelcodigoEscrever, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(jLabelcodigo)
@@ -307,6 +321,8 @@ public class JFramecadastroCarro extends javax.swing.JFrame {
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createSequentialGroup()
+                                .addComponent(jButtonExcluir)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jButtonCancelar)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jButtonSalvar)
@@ -337,7 +353,7 @@ public class JFramecadastroCarro extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel13)
                                 .addGap(8, 8, 8)
-                                .addComponent(jLabelCodigoo)))
+                                .addComponent(jLabelCodigo)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -402,11 +418,13 @@ public class JFramecadastroCarro extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonCancelar)
-                    .addComponent(jButtonSalvar))
+                    .addComponent(jButtonSalvar)
+                    .addComponent(jButtonExcluir))
                 .addContainerGap())
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelarActionPerformed
@@ -476,6 +494,27 @@ public class JFramecadastroCarro extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBoxAnoFabricacaoActionPerformed
 
+    private void jButtonExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonExcluirActionPerformed
+      if(jLabelCodigo.getText().equals("")){
+        
+    }else{
+     int codigo = Integer.parseInt(jLabelCodigo.getText());
+            CarroDAO dao = new CarroDAO();         
+            if(dao.excluir(codigo) == Utilitarios.NAO_FOI_POSSIVEL_EXCLUIR){
+            JOptionPane.showMessageDialog(null, "Não foi possivel excluir");
+            }else{
+               JOptionPane.showMessageDialog(null, "Exclusão realizada com sucesso");
+               dispose();
+            }
+                
+    } 
+        
+    }//GEN-LAST:event_jButtonExcluirActionPerformed
+
+    private void jFormattedTextFieldRenavamActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFormattedTextFieldRenavamActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jFormattedTextFieldRenavamActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -515,6 +554,7 @@ public class JFramecadastroCarro extends javax.swing.JFrame {
     private javax.swing.ButtonGroup buttonGroupEstaFuncional;
     private javax.swing.ButtonGroup buttonGroupPermitidaCirculacao;
     private javax.swing.JButton jButtonCancelar;
+    private javax.swing.JButton jButtonExcluir;
     private javax.swing.JButton jButtonSalvar;
     private javax.swing.JComboBox jComboBox1;
     private javax.swing.JComboBox jComboBoxAnoFabricacao;
@@ -543,7 +583,7 @@ public class JFramecadastroCarro extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JLabel jLabelAnoLancamento;
-    private javax.swing.JLabel jLabelCodigoo;
+    private javax.swing.JLabel jLabelCodigo;
     private javax.swing.JLabel jLabelCor;
     private javax.swing.JLabel jLabelData;
     private javax.swing.JLabel jLabelFabricante;
